@@ -33,16 +33,34 @@
       </div>
       <div class="event-info animate-up delay-5">
         <div class="event-info-item">
-          <span class="info-icon">📅</span>
+          <span class="info-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="3"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+              <circle cx="12" cy="16" r="1.2" fill="currentColor" stroke="none"/>
+            </svg>
+          </span>
           <span>Sábado, 23 de Maio de 2026</span>
         </div>
         <div class="event-info-item">
-          <span class="info-icon">⏰</span>
-          <span>18h00</span>
+          <span class="info-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"/>
+              <polyline points="12 7 12 12 15.5 15.5"/>
+            </svg>
+          </span>
+          <span>19h30</span>
         </div>
         <div class="event-info-item">
-          <span class="info-icon">📍</span>
-          <span>Quinta do Horizonte, São Paulo - SP</span>
+          <span class="info-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+              <circle cx="12" cy="9" r="2.5"/>
+            </svg>
+          </span>
+          <span>Avenida babaçu 1801, Bairro buritis</span>
         </div>
       </div>
       <a href="#rsvp" class="hero-cta animate-up delay-6">Confirmar Presença</a>
@@ -53,15 +71,78 @@
     </div>
   </section>
 
-  <!-- Welcome Message -->
+  <!-- Welcome Message + Photo Carousel -->
   <section class="welcome section-reveal">
     <div class="container">
       <div class="section-tag">Nossa História</div>
       <h2 class="section-title">Uma história de amor</h2>
+
+      <!-- Photo Carousel -->
+      <div class="story-carousel" id="storyCarousel">
+        <div class="story-slides">
+
+          <div class="story-slide active">
+            <div class="story-photo-wrap">
+              <img src="fotos/casal.png" alt="Wilson e Cicera" />
+              <div class="story-photo-overlay"></div>
+            </div>
+            <div class="story-caption">
+              <div class="story-caption-ornament">✦</div>
+              <p class="story-caption-text">Dois corações que encontraram no outro a sua morada. Neste dia especial, queremos ter ao nosso lado as pessoas que tornaram nossa história possível.</p>
+            </div>
+          </div>
+
+          <div class="story-slide">
+            <div class="story-photo-wrap">
+              <img src="fotos/casal 2.png" alt="Wilson e Cicera juntos" />
+              <div class="story-photo-overlay"></div>
+            </div>
+            <div class="story-caption">
+              <div class="story-caption-ornament">✦</div>
+              <p class="story-caption-text">Com amor, cumplicidade e a certeza de que o melhor ainda está por vir — cada momento ao seu lado é uma bênção.</p>
+            </div>
+          </div>
+
+          <div class="story-slide">
+            <div class="story-photo-wrap">
+              <img src="fotos/casal 3.png" alt="Wilson e Cicera na estrada" />
+              <div class="story-photo-overlay"></div>
+            </div>
+            <div class="story-caption">
+              <div class="story-caption-ornament">✦</div>
+              <p class="story-caption-text">Juntos em cada caminho, em cada aventura. Nossa história é feita de sorrisos compartilhados e memórias que guardaremos para sempre.</p>
+            </div>
+          </div>
+
+          <div class="story-slide">
+            <div class="story-photo-wrap">
+              <img src="fotos/casal 4.png" alt="Wilson e Cicera" />
+              <div class="story-photo-overlay"></div>
+            </div>
+            <div class="story-caption">
+              <div class="story-caption-ornament">✦</div>
+              <p class="story-caption-text">Será uma noite de muita emoção, dança e alegria. Venha celebrar conosco o início de nossa vida a dois.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Controls -->
+        <button class="carousel-btn carousel-prev" onclick="carouselMove(-1)" aria-label="Anterior">&#8592;</button>
+        <button class="carousel-btn carousel-next" onclick="carouselMove(1)" aria-label="Próximo">&#8594;</button>
+
+        <!-- Dots -->
+        <div class="carousel-dots" id="carouselDots">
+          <button class="carousel-dot active" onclick="carouselGoTo(0)"></button>
+          <button class="carousel-dot" onclick="carouselGoTo(1)"></button>
+          <button class="carousel-dot" onclick="carouselGoTo(2)"></button>
+          <button class="carousel-dot" onclick="carouselGoTo(3)"></button>
+        </div>
+      </div>
+
       <div class="welcome-quote">
         <div class="quote-mark">"</div>
-        <p>Dois corações que encontraram no outro a sua morada. Neste dia especial, queremos ter ao nosso lado as pessoas que tornaram nossa história possível — com amor, cumplicidade e a certeza de que o melhor ainda está por vir.</p>
-        <p>Será uma noite de muita emoção, dança e alegria. Venha celebrar conosco o início de nossa vida a dois.</p>
+        <p>Com amor, cumplicidade e a certeza de que o melhor ainda está por vir.</p>
         <div class="quote-mark close">"</div>
         <div class="quote-signature">Com amor, Wilson &amp; Cicera</div>
       </div>
@@ -101,70 +182,113 @@
   <section class="details section-reveal">
     <div class="container">
       <div class="section-tag">O Grande Dia</div>
-      <h2 class="section-title">Detalhes da Cerimônia</h2>
-      <div class="details-grid">
+      <h2 class="section-title">Detalhes do Evento</h2>
 
-        <!-- ═══════════════════════════════════════════════
-             CARD 1 — CERIMÔNIA
-             👉 Troque o src abaixo pela URL ou caminho da sua imagem
-                Exemplo: src="fotos/igreja.jpg"
-             ═══════════════════════════════════════════════ -->
-        <div class="detail-card">
-          <div class="detail-card-img">
-            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80"
-                 alt="Cerimônia"
-                 onerror="this.parentElement.style.display='none'" />
+      <!-- Info Cards -->
+      <div class="event-cards">
+        <div class="event-card">
+          <div class="event-card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+              <circle cx="12" cy="9" r="2.5"/>
+            </svg>
           </div>
-          <div class="detail-card-body">
-            <h3>Cerimônia</h3>
-            <p>Igreja Nossa Senhora das Graças</p>
-            <!-- 👉 Altere o horário aqui -->
-            <p class="detail-time">17h00</p>
-            <!-- 👉 Altere o endereço aqui -->
-            <p class="detail-address">Rua das Flores, 420 — Jardins, SP</p>
+          <h3>Local</h3>
+          <p class="event-card-name">Espaço Realizar</p>
+          <p class="event-card-address">Avenida Babaçu, 1801<br>Bairro Buritis</p>
+        </div>
+        <div class="event-card featured-card">
+          <div class="event-card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="3"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+              <circle cx="12" cy="16" r="1.2" fill="currentColor" stroke="none"/>
+            </svg>
           </div>
+          <h3>Data</h3>
+          <p class="event-card-name">Sábado, 23 de Maio</p>
+          <p class="event-card-time">2026</p>
+          <p class="event-card-address">Confirme até 10 de maio</p>
+        </div>
+        <div class="event-card">
+          <div class="event-card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"/>
+              <polyline points="12 7 12 12 15.5 15.5"/>
+            </svg>
+          </div>
+          <h3>Horário</h3>
+          <p class="event-card-name">Abertura dos portões</p>
+          <p class="event-card-time">19h30</p>
+          <p class="event-card-address">Traje: Social Completo</p>
+        </div>
+      </div>
+
+      <!-- Gallery divider -->
+      <div class="venue-gallery-label">
+        <span class="gallery-line"></span>
+        <span class="venue-gallery-text">Conheça o Espaço</span>
+        <span class="gallery-line"></span>
+      </div>
+
+      <!-- Photo Gallery -->
+      <div class="venue-gallery">
+
+        <div class="vg-item"><!-- 1: hero -->
+          <img src="fotos/9.jpeg" alt="Fachada frontal" loading="lazy" />
+          <div class="vg-label">Espaço Realizar</div>
         </div>
 
-        <!-- ═══════════════════════════════════════════════
-             CARD 2 — RECEPÇÃO (card central / destaque)
-             👉 Troque o src abaixo pela URL ou caminho da sua imagem
-                Exemplo: src="fotos/recepcao.jpg"
-             ═══════════════════════════════════════════════ -->
-        <div class="detail-card featured">
-          <div class="detail-card-img">
-            <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?w=600&q=80"
-                 alt="Recepção"
-                 onerror="this.parentElement.style.display='none'" />
-          </div>
-          <div class="detail-card-body">
-            <h3>Recepção</h3>
-            <p>Quinta do Horizonte</p>
-            <!-- 👉 Altere o horário aqui -->
-            <p class="detail-time">18h30</p>
-            <!-- 👉 Altere o endereço aqui -->
-            <p class="detail-address">Av. do Vale, 1200 — Alphaville, SP</p>
-          </div>
+        <div class="vg-item"><!-- 2: tall -->
+          <img src="fotos/8.jpeg" alt="Piscina com deck" loading="lazy" />
+          <div class="vg-label">Piscina</div>
         </div>
 
-        <!-- ═══════════════════════════════════════════════
-             CARD 3 — FESTA
-             👉 Troque o src abaixo pela URL ou caminho da sua imagem
-                Exemplo: src="fotos/festa.jpg"
-             ═══════════════════════════════════════════════ -->
-        <div class="detail-card">
-          <div class="detail-card-img">
-            <img src="https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?w=600&q=80"
-                 alt="Festa"
-                 onerror="this.parentElement.style.display='none'" />
-          </div>
-          <div class="detail-card-body">
-            <h3>Festa</h3>
-            <p>Jantar & Baile</p>
-            <!-- 👉 Altere o horário aqui -->
-            <p class="detail-time">19h30 — 02h00</p>
-            <!-- 👉 Altere o endereço aqui -->
-            <p class="detail-address">Traje: Social Completo</p>
-          </div>
+        <div class="vg-item"><!-- 3: c1 -->
+          <img src="fotos/6.jpeg" alt="Bar" loading="lazy" />
+          <div class="vg-label">Bar</div>
+        </div>
+
+        <div class="vg-item"><!-- 4: c2 -->
+          <img src="fotos/4.jpeg" alt="TV" loading="lazy" />
+          <div class="vg-label">Entretenimento</div>
+        </div>
+
+        <div class="vg-item"><!-- 5: wide -->
+          <img src="fotos/3.jpeg" alt="Fachada lateral" loading="lazy" />
+          <div class="vg-label">Entrada</div>
+        </div>
+
+        <div class="vg-item"><!-- 6: c3 -->
+          <img src="fotos/10.jpeg" alt="Piscina cascata" loading="lazy" />
+          <div class="vg-label">Piscina</div>
+        </div>
+
+        <div class="vg-item"><!-- 7: c4 -->
+          <img src="fotos/1.jpeg" alt="Área verde" loading="lazy" />
+          <div class="vg-label">Área Verde</div>
+        </div>
+
+        <div class="vg-item"><!-- 8: c5 -->
+          <img src="fotos/12.jpeg" alt="Cooler retrô" loading="lazy" />
+          <div class="vg-label">Bebidas</div>
+        </div>
+
+        <div class="vg-item"><!-- 9: c6 -->
+          <img src="fotos/7.jpeg" alt="Geladeira cerveja" loading="lazy" />
+          <div class="vg-label">Bebidas</div>
+        </div>
+
+        <div class="vg-item"><!-- 10: c7 -->
+          <img src="fotos/11.jpeg" alt="Lounge cadeiras" loading="lazy" />
+          <div class="vg-label">Lounge</div>
+        </div>
+
+        <div class="vg-item"><!-- 11: c8 -->
+          <img src="fotos/5.jpeg" alt="Banheiros" loading="lazy" />
+          <div class="vg-label">Banheiros</div>
         </div>
 
       </div>
@@ -193,7 +317,7 @@
           </div>
           <div class="form-group">
             <label for="message">Mensagem aos Noivos <span class="optional">(opcional)</span></label>
-            <textarea id="message" rows="4" placeholder="Escreva uma mensagem especial para Isabela e Rafael…"></textarea>
+            <textarea id="message" rows="4" placeholder="Escreva uma mensagem especial para Wilson e Cicera…"></textarea>
           </div>
           <div class="rsvp-buttons">
             <button class="btn-confirm" id="btnConfirm" onclick="submitRSVP('yes')">
@@ -234,67 +358,9 @@
       <div class="pix-card">
         <div class="pix-qrcode-wrapper">
           <div class="pix-qrcode" id="pixQR">
-            <!-- SVG QR Code placeholder (replace with real QR) -->
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="180" height="180">
-              <rect width="200" height="200" fill="white"/>
-              <!-- Corners -->
-              <rect x="10" y="10" width="60" height="60" fill="none" stroke="#b5924c" stroke-width="6"/>
-              <rect x="20" y="20" width="40" height="40" fill="#b5924c"/>
-              <rect x="130" y="10" width="60" height="60" fill="none" stroke="#b5924c" stroke-width="6"/>
-              <rect x="140" y="20" width="40" height="40" fill="#b5924c"/>
-              <rect x="10" y="130" width="60" height="60" fill="none" stroke="#b5924c" stroke-width="6"/>
-              <rect x="20" y="140" width="40" height="40" fill="#b5924c"/>
-              <!-- Data modules -->
-              <rect x="80" y="10" width="10" height="10" fill="#b5924c"/>
-              <rect x="100" y="10" width="10" height="10" fill="#b5924c"/>
-              <rect x="110" y="20" width="10" height="10" fill="#b5924c"/>
-              <rect x="80" y="30" width="10" height="10" fill="#b5924c"/>
-              <rect x="100" y="40" width="10" height="10" fill="#b5924c"/>
-              <rect x="80" y="50" width="10" height="10" fill="#b5924c"/>
-              <rect x="90" y="60" width="10" height="10" fill="#b5924c"/>
-              <rect x="110" y="60" width="10" height="10" fill="#b5924c"/>
-              <rect x="80" y="80" width="10" height="10" fill="#b5924c"/>
-              <rect x="100" y="80" width="10" height="10" fill="#b5924c"/>
-              <rect x="120" y="80" width="10" height="10" fill="#b5924c"/>
-              <rect x="140" y="80" width="10" height="10" fill="#b5924c"/>
-              <rect x="160" y="80" width="10" height="10" fill="#b5924c"/>
-              <rect x="80" y="90" width="10" height="10" fill="#b5924c"/>
-              <rect x="110" y="90" width="10" height="10" fill="#b5924c"/>
-              <rect x="130" y="90" width="10" height="10" fill="#b5924c"/>
-              <rect x="150" y="90" width="10" height="10" fill="#b5924c"/>
-              <rect x="80" y="100" width="10" height="10" fill="#b5924c"/>
-              <rect x="100" y="100" width="10" height="10" fill="#b5924c"/>
-              <rect x="120" y="100" width="10" height="10" fill="#b5924c"/>
-              <rect x="140" y="100" width="10" height="10" fill="#b5924c"/>
-              <rect x="160" y="100" width="10" height="10" fill="#b5924c"/>
-              <rect x="90" y="110" width="10" height="10" fill="#b5924c"/>
-              <rect x="110" y="110" width="10" height="10" fill="#b5924c"/>
-              <rect x="130" y="110" width="10" height="10" fill="#b5924c"/>
-              <rect x="80" y="120" width="10" height="10" fill="#b5924c"/>
-              <rect x="100" y="120" width="10" height="10" fill="#b5924c"/>
-              <rect x="120" y="120" width="10" height="10" fill="#b5924c"/>
-              <rect x="150" y="120" width="10" height="10" fill="#b5924c"/>
-              <rect x="80" y="130" width="10" height="10" fill="#b5924c"/>
-              <rect x="90" y="140" width="10" height="10" fill="#b5924c"/>
-              <rect x="110" y="140" width="10" height="10" fill="#b5924c"/>
-              <rect x="130" y="140" width="10" height="10" fill="#b5924c"/>
-              <rect x="80" y="150" width="10" height="10" fill="#b5924c"/>
-              <rect x="100" y="150" width="10" height="10" fill="#b5924c"/>
-              <rect x="140" y="150" width="10" height="10" fill="#b5924c"/>
-              <rect x="160" y="150" width="10" height="10" fill="#b5924c"/>
-              <rect x="80" y="160" width="10" height="10" fill="#b5924c"/>
-              <rect x="110" y="160" width="10" height="10" fill="#b5924c"/>
-              <rect x="130" y="160" width="10" height="10" fill="#b5924c"/>
-              <rect x="150" y="160" width="10" height="10" fill="#b5924c"/>
-              <rect x="90" y="170" width="10" height="10" fill="#b5924c"/>
-              <rect x="120" y="170" width="10" height="10" fill="#b5924c"/>
-              <rect x="140" y="170" width="10" height="10" fill="#b5924c"/>
-              <rect x="160" y="170" width="10" height="10" fill="#b5924c"/>
-              <!-- PIX logo center -->
-              <rect x="87" y="87" width="26" height="26" rx="4" fill="white"/>
-              <text x="100" y="105" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#b5924c">PIX</text>
-            </svg>
+            <img src="qrcode-pix.png" alt="QR Code PIX — Wilson & Cicera" width="180" height="180" style="display:block; border-radius:8px;" />
           </div>
+          <p class="pix-name">Cicera dos Santos Silva</p>
           <p class="pix-note">Escaneie o QR Code acima</p>
         </div>
         <div class="pix-key-area">
@@ -314,7 +380,7 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-ornament">✦ ✦ ✦</div>
-    <h3 class="footer-names">Wilson</h3> &amp;  <h3>Cicera</h3>
+    <h3 class="footer-names">Wilson <span class="footer-amp">&amp;</span> Cicera</h3>
     <p class="footer-date">23 de Maio de 2026</p>
     <p class="footer-message">Feito com amor, para você que é especial para nós ❤️</p>
   </footer>
