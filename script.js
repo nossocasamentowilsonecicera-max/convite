@@ -5,9 +5,9 @@
 
 // ── CONFIG ─────────────────────────────────────────────────
 const CONFIG = {
-  weddingDate: new Date('2026-05-23T18:00:00'),  // Data/horário do casamento
-  pixKey: 'nossocasamentowilsonecicera@gmail.com',         // Chave PIX
-  formlyKey: '3b021adbaedd4ec3b08647903bb956c'    // ✅ Sua chave pública Formly.email
+  weddingDate: new Date('2026-05-23T19:30:00'),
+  pixKey: 'nossocasamentowilsonecicera@gmail.com',
+  web3Key: 'f8149f96-011a-4c34-8a38-8910b6f88fbf'  // ✅ Web3Forms
 };
 
 // ── COUNTDOWN ───────────────────────────────────────────────
@@ -83,7 +83,6 @@ function validateForm() {
 }
 
 // ── RSVP SUBMISSION ──────────────────────────────────────────
-// ✅ Usa FormData + endpoint https://formly.email/submit conforme documentação
 async function submitRSVP(type) {
   if (!validateForm()) return;
 
@@ -95,30 +94,28 @@ async function submitRSVP(type) {
   btnConfirm.textContent = type === 'yes' ? 'Enviando…' : '✓ Confirmar Presença';
   btnDecline.textContent = type === 'no'  ? 'Enviando…' : 'Não Poderei Ir';
 
-  // Monta FormData conforme exigido pelo Formly.email
   const formData = new FormData();
-  formData.append('access_key', CONFIG.formlyKey);
-  formData.append('subject',    'RSVP — Casamento Isabela & Rafael');
-  formData.append('from_name',  'Convite de Casamento');
-  formData.append('replyto',    'nossocasamentowilsonecicera@gmail.com');
-  formData.append('to',         'nossocasamentowilsonecicera@gmail.com');
+  formData.append('access_key', CONFIG.web3Key);
+  formData.append('subject',    'RSVP — Casamento Wilson & Cicera');
+  formData.append('from_name',  document.getElementById('name').value.trim());
+  formData.append('replyto',    document.getElementById('email').value.trim());
   formData.append('name',       document.getElementById('name').value.trim());
   formData.append('email',      document.getElementById('email').value.trim());
   formData.append('message',    document.getElementById('message').value.trim());
   formData.append('presenca',   type === 'yes' ? 'Sim, estarei presente!' : 'Não poderei comparecer.');
-  formData.append('casamento',  'Isabela & Rafael — 14/06/2025');
+  formData.append('casamento',  'Wilson & Cicera — 23/05/2026');
 
   try {
-    const response = await fetch('https://formly.email/submit', {
+    const response = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       body: formData
     });
     const result = await response.json();
     if (!result.success) {
-      console.warn('Formly.email retornou erro:', result.message);
+      console.warn('Web3Forms retornou erro:', result.message);
     }
   } catch (err) {
-    console.warn('Erro ao enviar para Formly.email:', err.message);
+    console.warn('Erro ao enviar:', err.message);
   }
 
   showRSVPResult(type);
@@ -237,3 +234,69 @@ document.addEventListener('DOMContentLoaded', () => {
   setInterval(updateCountdown, 1000);
   initScrollReveal();
 });
+
+// ── STORY CAROUSEL ────────────────────────────────────────────
+(function () {
+  let current = 0;
+  const slides = document.querySelectorAll('.story-slide');
+  const dots   = document.querySelectorAll('.carousel-dot');
+  const total  = slides.length;
+  let autoTimer = null;
+
+  function setSlideBackground(slide) {
+    const img = slide.querySelector('.story-photo-wrap img');
+    const wrap = slide.querySelector('.story-photo-wrap');
+    if (img && wrap) {
+      wrap.style.setProperty('--slide-bg', 'url(' + img.src + ')');
+    }
+  }
+
+  function goTo(idx) {
+    if (idx === current) return;
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (idx + total) % total;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+    setSlideBackground(slides[current]);
+  }
+
+  window.carouselMove = function (dir) {
+    resetAuto();
+    goTo(current + dir);
+  };
+
+  window.carouselGoTo = function (idx) {
+    resetAuto();
+    goTo(idx);
+  };
+
+  function resetAuto() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(() => goTo(current + 1), 8000);
+  }
+
+  // Touch/swipe support
+  let touchStartX = 0;
+  const carousel = document.getElementById('storyCarousel');
+  if (carousel) {
+    carousel.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    carousel.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) { resetAuto(); goTo(current + (diff > 0 ? 1 : -1)); }
+    });
+  }
+
+  // Start autoplay after DOM is ready
+  document.addEventListener('DOMContentLoaded', () => {
+    slides.forEach(slide => {
+      const img = slide.querySelector('.story-photo-wrap img');
+      const wrap = slide.querySelector('.story-photo-wrap');
+      if (img && wrap) {
+        const apply = () => wrap.style.setProperty('--slide-bg', 'url(' + img.src + ')');
+        img.complete ? apply() : img.addEventListener('load', apply);
+      }
+    });
+    resetAuto();
+  });
+})();
