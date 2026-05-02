@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wilson & Cicera — 23 de Maio de 2026</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow animate-up delay-1">Com imensa alegria, convidamos você para celebrar</p>
+      <div class="names-wrapper animate-up delay-2">
+        <h1 class="bride-name">Wilson</h1>
+        <div class="ampersand-wrapper">
+          <span class="ampersand">&amp;</span>
+          <div class="ampersand-line"></div>
+        </div>
+        <h1 class="groom-name">Cicera</h1>
+      </div>
+      <p class="hero-tagline animate-up delay-3">estão se casando</p>
+      <div class="hero-divider animate-up delay-4">
+        <span class="divider-line"></span>
+        <span class="divider-ornament">✦</span>
+        <span class="divider-line"></span>
+      </div>
+      <div class="event-info animate-up delay-5">
+        <div class="event-info-item">
+          <span class="info-icon">📅</span>
+          <span>Sábado, 23 de Maio de 2026</span>
+        </div>
+        <div class="event-info-item">
+          <span class="info-icon">⏰</span>
+          <span>18h00</span>
+        </div>
+        <div class="event-info-item">
+          <span class="info-icon">📍</span>
+          <span>Quinta do Horizonte, São Paulo - SP</span>
+        </div>
+      </div>
+      <a href="#rsvp" class="hero-cta animate-up delay-6">Confirmar Presença</a>
+    </div>
+    <div class="scroll-hint animate-up delay-6">
+      <span>Role para baixo</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- Welcome Message -->
+  <section class="welcome section-reveal">
+    <div class="container">
+      <div class="section-tag">Nossa História</div>
+      <h2 class="section-title">Uma história de amor</h2>
+      <div class="welcome-quote">
+        <div class="quote-mark">"</div>
+        <p>Dois corações que encontraram no outro a sua morada. Neste dia especial, queremos ter ao nosso lado as pessoas que tornaram nossa história possível — com amor, cumplicidade e a certeza de que o melhor ainda está por vir.</p>
+        <p>Será uma noite de muita emoção, dança e alegria. Venha celebrar conosco o início de nossa vida a dois.</p>
+        <div class="quote-mark close">"</div>
+        <div class="quote-signature">Com amor, Wilson &amp; Cicera</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Countdown -->
+  <section class="countdown-section section-reveal">
+    <div class="countdown-bg"></div>
+    <div class="container">
+      <div class="section-tag light">A Celebração Começa Em</div>
+      <div class="countdown-grid" id="countdown">
+        <div class="countdown-item">
+          <div class="countdown-number" id="days">00</div>
+          <div class="countdown-label">Dias</div>
+        </div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-item">
+          <div class="countdown-number" id="hours">00</div>
+          <div class="countdown-label">Horas</div>
+        </div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-item">
+          <div class="countdown-number" id="minutes">00</div>
+          <div class="countdown-label">Minutos</div>
+        </div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-item">
+          <div class="countdown-number" id="seconds">00</div>
+          <div class="countdown-label">Segundos</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Event Details -->
+  <section class="details section-reveal">
+    <div class="container">
+      <div class="section-tag">O Grande Dia</div>
+      <h2 class="section-title">Detalhes da Cerimônia</h2>
+      <div class="details-grid">
+
+        <!-- ═══════════════════════════════════════════════
+             CARD 1 — CERIMÔNIA
+             👉 Troque o src abaixo pela URL ou caminho da sua imagem
+                Exemplo: src="fotos/igreja.jpg"
+             ═══════════════════════════════════════════════ -->
+        <div class="detail-card">
+          <div class="detail-card-img">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80"
+                 alt="Cerimônia"
+                 onerror="this.parentElement.style.display='none'" />
+          </div>
+          <div class="detail-card-body">
+            <h3>Cerimônia</h3>
+            <p>Igreja Nossa Senhora das Graças</p>
+            <!-- 👉 Altere o horário aqui -->
+            <p class="detail-time">17h00</p>
+            <!-- 👉 Altere o endereço aqui -->
+            <p class="detail-address">Rua das Flores, 420 — Jardins, SP</p>
+          </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════
+             CARD 2 — RECEPÇÃO (card central / destaque)
+             👉 Troque o src abaixo pela URL ou caminho da sua imagem
+                Exemplo: src="fotos/recepcao.jpg"
+             ═══════════════════════════════════════════════ -->
+        <div class="detail-card featured">
+          <div class="detail-card-img">
+            <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?w=600&q=80"
+                 alt="Recepção"
+                 onerror="this.parentElement.style.display='none'" />
+          </div>
+          <div class="detail-card-body">
+            <h3>Recepção</h3>
+            <p>Quinta do Horizonte</p>
+            <!-- 👉 Altere o horário aqui -->
+            <p class="detail-time">18h30</p>
+            <!-- 👉 Altere o endereço aqui -->
+            <p class="detail-address">Av. do Vale, 1200 — Alphaville, SP</p>
+          </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════
+             CARD 3 — FESTA
+             👉 Troque o src abaixo pela URL ou caminho da sua imagem
+                Exemplo: src="fotos/festa.jpg"
+             ═══════════════════════════════════════════════ -->
+        <div class="detail-card">
+          <div class="detail-card-img">
+            <img src="https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?w=600&q=80"
+                 alt="Festa"
+                 onerror="this.parentElement.style.display='none'" />
+          </div>
+          <div class="detail-card-body">
+            <h3>Festa</h3>
+            <p>Jantar & Baile</p>
+            <!-- 👉 Altere o horário aqui -->
+            <p class="detail-time">19h30 — 02h00</p>
+            <!-- 👉 Altere o endereço aqui -->
+            <p class="detail-address">Traje: Social Completo</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section class="rsvp section-reveal" id="rsvp">
+    <div class="rsvp-bg"></div>
+    <div class="container">
+      <div class="section-tag light">Confirmação</div>
+      <h2 class="section-title light">Confirme sua Presença</h2>
+      <p class="rsvp-subtitle">Por favor, confirme até <strong>10 de maio de 2026</strong></p>
+
+      <div class="rsvp-card" id="rsvpCard">
+        <div id="rsvpForm">
+          <div class="form-group">
+            <label for="name">Nome Completo <span class="required">*</span></label>
+            <input type="text" id="name" placeholder="Seu nome completo" />
+            <span class="field-error" id="nameError">Por favor, insira seu nome.</span>
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail <span class="required">*</span></label>
+            <input type="email" id="email" placeholder="seu@email.com" />
+            <span class="field-error" id="emailError">Por favor, insira um e-mail válido.</span>
+          </div>
+          <div class="form-group">
+            <label for="message">Mensagem aos Noivos <span class="optional">(opcional)</span></label>
+            <textarea id="message" rows="4" placeholder="Escreva uma mensagem especial para Isabela e Rafael…"></textarea>
+          </div>
+          <div class="rsvp-buttons">
+            <button class="btn-confirm" id="btnConfirm" onclick="submitRSVP('yes')">
+              <span>✓</span> Confirmar Presença
+            </button>
+            <button class="btn-decline" id="btnDecline" onclick="submitRSVP('no')">
+              Não Poderei Ir
+            </button>
+          </div>
+        </div>
+
+        <!-- Success / Decline messages -->
+        <div class="rsvp-success" id="rsvpSuccess">
+          <div class="success-animation">
+            <div class="success-ring"></div>
+            <div class="success-heart">❤️</div>
+          </div>
+          <h3>Obrigado por confirmar sua presença!</h3>
+          <p>Será um momento inesquecível ❤️</p>
+        </div>
+        <div class="rsvp-decline" id="rsvpDecline">
+          <div class="success-animation">
+            <div class="success-ring decline-ring"></div>
+            <div class="success-heart">🌸</div>
+          </div>
+          <h3>Sentiremos sua falta, mas agradecemos pelo carinho ❤️</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PIX Gift -->
+  <section class="pix-section section-reveal">
+    <div class="container">
+      <div class="section-tag">Presente</div>
+      <h2 class="section-title">Presente Via PIX</h2>
+      <p class="pix-subtitle">Se desejar nos presentear, ficaremos muito felizes com sua contribuição para nossa lua de mel 🌙</p>
+      <div class="pix-card">
+        <div class="pix-qrcode-wrapper">
+          <div class="pix-qrcode" id="pixQR">
+            <!-- SVG QR Code placeholder (replace with real QR) -->
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="180" height="180">
+              <rect width="200" height="200" fill="white"/>
+              <!-- Corners -->
+              <rect x="10" y="10" width="60" height="60" fill="none" stroke="#b5924c" stroke-width="6"/>
+              <rect x="20" y="20" width="40" height="40" fill="#b5924c"/>
+              <rect x="130" y="10" width="60" height="60" fill="none" stroke="#b5924c" stroke-width="6"/>
+              <rect x="140" y="20" width="40" height="40" fill="#b5924c"/>
+              <rect x="10" y="130" width="60" height="60" fill="none" stroke="#b5924c" stroke-width="6"/>
+              <rect x="20" y="140" width="40" height="40" fill="#b5924c"/>
+              <!-- Data modules -->
+              <rect x="80" y="10" width="10" height="10" fill="#b5924c"/>
+              <rect x="100" y="10" width="10" height="10" fill="#b5924c"/>
+              <rect x="110" y="20" width="10" height="10" fill="#b5924c"/>
+              <rect x="80" y="30" width="10" height="10" fill="#b5924c"/>
+              <rect x="100" y="40" width="10" height="10" fill="#b5924c"/>
+              <rect x="80" y="50" width="10" height="10" fill="#b5924c"/>
+              <rect x="90" y="60" width="10" height="10" fill="#b5924c"/>
+              <rect x="110" y="60" width="10" height="10" fill="#b5924c"/>
+              <rect x="80" y="80" width="10" height="10" fill="#b5924c"/>
+              <rect x="100" y="80" width="10" height="10" fill="#b5924c"/>
+              <rect x="120" y="80" width="10" height="10" fill="#b5924c"/>
+              <rect x="140" y="80" width="10" height="10" fill="#b5924c"/>
+              <rect x="160" y="80" width="10" height="10" fill="#b5924c"/>
+              <rect x="80" y="90" width="10" height="10" fill="#b5924c"/>
+              <rect x="110" y="90" width="10" height="10" fill="#b5924c"/>
+              <rect x="130" y="90" width="10" height="10" fill="#b5924c"/>
+              <rect x="150" y="90" width="10" height="10" fill="#b5924c"/>
+              <rect x="80" y="100" width="10" height="10" fill="#b5924c"/>
+              <rect x="100" y="100" width="10" height="10" fill="#b5924c"/>
+              <rect x="120" y="100" width="10" height="10" fill="#b5924c"/>
+              <rect x="140" y="100" width="10" height="10" fill="#b5924c"/>
+              <rect x="160" y="100" width="10" height="10" fill="#b5924c"/>
+              <rect x="90" y="110" width="10" height="10" fill="#b5924c"/>
+              <rect x="110" y="110" width="10" height="10" fill="#b5924c"/>
+              <rect x="130" y="110" width="10" height="10" fill="#b5924c"/>
+              <rect x="80" y="120" width="10" height="10" fill="#b5924c"/>
+              <rect x="100" y="120" width="10" height="10" fill="#b5924c"/>
+              <rect x="120" y="120" width="10" height="10" fill="#b5924c"/>
+              <rect x="150" y="120" width="10" height="10" fill="#b5924c"/>
+              <rect x="80" y="130" width="10" height="10" fill="#b5924c"/>
+              <rect x="90" y="140" width="10" height="10" fill="#b5924c"/>
+              <rect x="110" y="140" width="10" height="10" fill="#b5924c"/>
+              <rect x="130" y="140" width="10" height="10" fill="#b5924c"/>
+              <rect x="80" y="150" width="10" height="10" fill="#b5924c"/>
+              <rect x="100" y="150" width="10" height="10" fill="#b5924c"/>
+              <rect x="140" y="150" width="10" height="10" fill="#b5924c"/>
+              <rect x="160" y="150" width="10" height="10" fill="#b5924c"/>
+              <rect x="80" y="160" width="10" height="10" fill="#b5924c"/>
+              <rect x="110" y="160" width="10" height="10" fill="#b5924c"/>
+              <rect x="130" y="160" width="10" height="10" fill="#b5924c"/>
+              <rect x="150" y="160" width="10" height="10" fill="#b5924c"/>
+              <rect x="90" y="170" width="10" height="10" fill="#b5924c"/>
+              <rect x="120" y="170" width="10" height="10" fill="#b5924c"/>
+              <rect x="140" y="170" width="10" height="10" fill="#b5924c"/>
+              <rect x="160" y="170" width="10" height="10" fill="#b5924c"/>
+              <!-- PIX logo center -->
+              <rect x="87" y="87" width="26" height="26" rx="4" fill="white"/>
+              <text x="100" y="105" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#b5924c">PIX</text>
+            </svg>
+          </div>
+          <p class="pix-note">Escaneie o QR Code acima</p>
+        </div>
+        <div class="pix-key-area">
+          <p class="pix-key-label">Ou copie a chave PIX</p>
+          <div class="pix-key-box">
+            <span id="pixKey">nossocasamentowilsonecicera@gmail.com</span>
+            <button class="btn-copy" id="btnCopy" onclick="copyPix()">
+              <span id="copyIcon">📋</span> Copiar
+            </button>
+          </div>
+          <div class="pix-copied" id="pixCopied">✓ Chave PIX copiada com sucesso!</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-ornament">✦ ✦ ✦</div>
+    <h3 class="footer-names">Wilson</h3> &amp;  <h3>Cicera</h3>
+    <p class="footer-date">23 de Maio de 2026</p>
+    <p class="footer-message">Feito com amor, para você que é especial para nós ❤️</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
