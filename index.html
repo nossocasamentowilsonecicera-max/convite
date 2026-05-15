@@ -80,11 +80,49 @@
           <span>Avenida babaçu 1801, Bairro buritis</span>
         </div>
       </div>
-      <a href="#rsvp" class="hero-cta animate-up delay-6">Confirmar Presença</a>
+      <!-- PIX Hero Mini Block -->
+      <div class="hero-pix animate-up delay-6">
+        <div class="hero-pix-divider">
+          <span class="divider-line"></span>
+          <span class="hero-pix-label">Presente</span>
+          <span class="divider-line"></span>
+        </div>
+        <div class="hero-pix-inner">
+          <div class="hero-pix-qr">
+            <img src="qrcode-pix.png" alt="QR Code PIX" />
+          </div>
+          <div class="hero-pix-info">
+            <p class="hero-pix-title">Presente via PIX</p>
+            <p class="hero-pix-name">Cicera dos Santos Silva</p>
+            <div class="hero-pix-key-row">
+              <span class="hero-pix-key-text">nossocasamentowilsonecicera@gmail.com</span>
+              <button class="hero-pix-copy-btn" onclick="copyPixHero()" id="heroCopyBtn">
+                📋 Copiar
+              </button>
+            </div>
+            <div class="hero-pix-copied" id="heroCopied">✓ Chave copiada!</div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="scroll-hint animate-up delay-6">
-      <span>Role para baixo</span>
-      <div class="scroll-arrow"></div>
+
+    <!-- Swipe down to confirm -->
+    <div class="swipe-hint animate-up delay-6" onclick="document.getElementById('rsvp').scrollIntoView({behavior:'smooth',block:'start'})">
+      <span class="swipe-hint-text">Arraste para confirmar presença</span>
+      <div class="swipe-hand">
+        <svg class="swipe-finger" viewBox="0 0 48 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- finger/hand -->
+          <rect x="18" y="2" width="12" height="38" rx="6" fill="currentColor" opacity="0.85"/>
+          <rect x="6"  y="22" width="10" height="28" rx="5" fill="currentColor" opacity="0.7"/>
+          <rect x="32" y="22" width="10" height="28" rx="5" fill="currentColor" opacity="0.7"/>
+          <rect x="6"  y="38" width="36" height="28" rx="10" fill="currentColor" opacity="0.85"/>
+        </svg>
+        <div class="swipe-arrows">
+          <span class="swipe-arr arr1">↓</span>
+          <span class="swipe-arr arr2">↓</span>
+          <span class="swipe-arr arr3">↓</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -366,33 +404,7 @@
     </div>
   </section>
 
-  <!-- PIX Gift -->
-  <section class="pix-section section-reveal">
-    <div class="container">
-      <div class="section-tag">Presente</div>
-      <h2 class="section-title">Presente Via PIX</h2>
-      <p class="pix-subtitle">Se desejar nos presentear, ficaremos muito felizes com sua contribuição para nossa lua de mel 🌙</p>
-      <div class="pix-card">
-        <div class="pix-qrcode-wrapper">
-          <div class="pix-qrcode" id="pixQR">
-            <img src="qrcode-pix.png" alt="QR Code PIX — Wilson & Cicera" width="180" height="180" style="display:block; border-radius:8px;" />
-          </div>
-          <p class="pix-name">Cicera dos Santos Silva</p>
-          <p class="pix-note">Escaneie o QR Code acima</p>
-        </div>
-        <div class="pix-key-area">
-          <p class="pix-key-label">Ou copie a chave PIX</p>
-          <div class="pix-key-box">
-            <span id="pixKey">nossocasamentowilsonecicera@gmail.com</span>
-            <button class="btn-copy" id="btnCopy" onclick="copyPix()">
-              <span id="copyIcon">📋</span> Copiar
-            </button>
-          </div>
-          <div class="pix-copied" id="pixCopied">✓ Chave PIX copiada com sucesso!</div>
-        </div>
-      </div>
-    </div>
-  </section>
+
 
   <!-- Footer -->
   <footer class="footer">
@@ -403,5 +415,34 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+// ── PIX COPY (HERO) ──────────────────────────────────────────
+function copyPixHero() {
+  const key = CONFIG.pixKey;
+  const btn = document.getElementById('heroCopyBtn');
+  const copied = document.getElementById('heroCopied');
+  const showDone = () => {
+    btn.textContent = '✓ Copiado!';
+    btn.style.background = 'linear-gradient(135deg,#5a8a5a,#7ab87a)';
+    copied.classList.add('show');
+    setTimeout(() => {
+      btn.textContent = '📋 Copiar';
+      btn.style.background = '';
+      copied.classList.remove('show');
+    }, 3000);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(key).then(showDone).catch(() => fallback());
+  } else { fallback(); }
+  function fallback() {
+    const ta = document.createElement('textarea');
+    ta.value = key; ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); showDone(); } catch(e){}
+    document.body.removeChild(ta);
+  }
+}
+  </script>
+
 </body>
 </html>
