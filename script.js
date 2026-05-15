@@ -5,7 +5,7 @@
 
 // ── CONFIG ─────────────────────────────────────────────────
 const CONFIG = {
-  weddingDate: new Date('2026-05-23T19:30:00'),
+  weddingDate: new Date('2026-06-23T19:30:00'),
   pixKey: 'nossocasamentowilsonecicera@gmail.com',
   web3Key: 'f8149f96-011a-4c34-8a38-8910b6f88fbf'  // ✅ Web3Forms
 };
